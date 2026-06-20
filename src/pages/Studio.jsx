@@ -136,7 +136,7 @@ export default function Studio() {
               <div className="aspect-[4/3] overflow-hidden border border-stone/35">
                 <iframe
                   title="Studio Legale Avv. Maurizio Di Muzio - Chieti"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.0!2d14.1669!3d42.3540!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13319adae8b7e4d9%3A0x70ea0bf0a3cd70c!2sChieti+Alta%2C+Chieti!5e0!3m2!1sit!2sit!4v1700000000000"
+                  src="https://maps.google.com/maps?q=Via+degli+Agostiniani+46,+66100+Chieti+CH,+Italia&t=&z=17&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -145,9 +145,6 @@ export default function Studio() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <p className="mt-2 font-sans text-xs text-stone">
-                Posizione approssimativa. Indirizzo esatto da confermare con lo studio.
-              </p>
             </motion.div>
 
             {/* Contatti */}

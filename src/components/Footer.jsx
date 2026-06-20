@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
 
         {/* Navigazione */}
-        <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10" role="list">
+        <ul className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-y-3 md:gap-x-8 mb-10" role="list">
           {navLinks.map(({ to, label }) => (
             <li key={to}>
               <NavLink

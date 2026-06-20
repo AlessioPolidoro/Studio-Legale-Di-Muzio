@@ -39,7 +39,7 @@ export default function Home() {
       {/* ====================================================
           HERO
       ==================================================== */}
-      <section className="min-h-[92vh] flex flex-col justify-center bg-bg px-6 py-24 relative overflow-hidden">
+      <section className="min-h-[85vh] flex flex-col justify-center bg-bg px-6 py-24 relative overflow-hidden">
         {/* Monogramma decorativo di sfondo */}
         <span
           className="absolute right-0 bottom-0 font-display font-semibold leading-none text-stone/[0.07] select-none pointer-events-none translate-y-8"

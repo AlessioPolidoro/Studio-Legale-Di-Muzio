@@ -59,6 +59,7 @@ export default function Contatti() {
 
           {/* Form — primo su mobile, col-span-2 su desktop */}
           <motion.div {...revealUp()} className="md:col-span-2 md:order-first">
+            <h2 className="font-display text-2xl text-ink mb-8">Invia un messaggio</h2>
             <ContactForm />
           </motion.div>
 

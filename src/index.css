@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink:         #1B1714;
+  --bg:          #F4F0E6;
+  --surface:     #FBF8F0;
+  --bordeaux:    #6B2A2E;
+  --bordeauxDark:#501F22;
+  --brass:       #B08A3E;
+  --stone:       #C9BFAE;
+  --taupe:       #6E6557;
+}
+
+html {
+  /* scrollbar a sinistra */
+  direction: rtl;
+
+  /* scrollbar Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--bordeaux) var(--bg);
+}
+
+#root {
+  direction: ltr;
+}
+
+body {
+  direction: ltr;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* scrollbar Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bordeaux);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bordeauxDark);
+}
+
+::selection {
+  background-color: var(--bordeaux);
+  color: white;
+}
+
+/* Link accessibilita skip-to-content */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 200;
+  background: var(--bordeaux);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Focus globale visibile */
+:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 3px;
+}

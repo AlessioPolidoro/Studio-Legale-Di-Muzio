@@ -202,11 +202,11 @@ export default function Metodo() {
       <Divider />
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-surface text-left md:text-center">
+      <section className="py-20 px-6 bg-surface text-center">
         <motion.div {...revealUp()} className="max-w-2xl mx-auto">
           <h3 className="font-display text-2xl text-ink mb-3">Pronto a iniziare?</h3>
           <p className="font-sans text-taupe mb-8">Scrivi o chiama per fissare una prima consulenza.</p>
-          <div className="flex justify-start md:justify-center">
+          <div className="flex justify-center">
             <Button to="/contatti" variant="primary">Contattami</Button>
           </div>
         </motion.div>

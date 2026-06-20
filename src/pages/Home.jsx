@@ -275,17 +275,17 @@ export default function Home() {
       {/* ====================================================
           CTA FINALE
       ==================================================== */}
-      <section className="py-24 md:py-32 px-6 bg-bordeaux text-white text-left md:text-center">
+      <section className="py-24 md:py-32 px-6 bg-bordeaux text-white text-center">
         <motion.div {...revealUp()} className="max-w-2xl mx-auto">
           <h2 className="font-display text-4xl md:text-5xl leading-tight">
             Inizia con una consulenza
           </h2>
-          <div className="w-8 h-px bg-brass/50 mx-0 md:mx-auto my-8" aria-hidden="true" />
+          <div className="w-8 h-px bg-brass/50 mx-auto my-8" aria-hidden="true" />
           <p className="font-sans text-white/70 leading-relaxed mb-10 text-lg">
             Ogni vicenda legale è diversa. Il primo passo è raccontarla.
             È possibile scrivere o chiamare per fissare un appuntamento.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-start md:justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button to="/contatti" variant="solidLight">Contatta lo studio</Button>
             <Button to="/aree" variant="outlineLight">Aree di competenza</Button>
           </div>

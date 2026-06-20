@@ -278,7 +278,7 @@ export default function Home() {
       <section className="py-24 md:py-32 px-6 bg-bordeaux text-white text-center">
         <motion.div {...revealUp()} className="max-w-2xl mx-auto">
           <h2 className="font-display text-4xl md:text-5xl leading-tight">
-            Inizia con una consulenza
+            Inizia con<br className="md:hidden" /> una consulenza
           </h2>
           <div className="w-8 h-px bg-brass/50 mx-auto my-8" aria-hidden="true" />
           <p className="font-sans text-white/70 leading-relaxed mb-10 text-lg">

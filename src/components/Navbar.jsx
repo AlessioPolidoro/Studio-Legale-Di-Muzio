@@ -73,7 +73,7 @@ export default function Navbar() {
         }`}
       >
         <nav
-          className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+          className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
           role="navigation"
           aria-label="Navigazione principale"
         >

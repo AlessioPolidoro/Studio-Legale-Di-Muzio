@@ -16,6 +16,7 @@
 html {
   /* scrollbar a sinistra */
   direction: rtl;
+  overflow-x: clip;
 
   /* scrollbar Firefox */
   scrollbar-width: thin;
@@ -28,6 +29,7 @@ html {
 
 body {
   direction: ltr;
+  overflow-x: clip;
   background-color: var(--bg);
   color: var(--ink);
   font-family: "Inter", system-ui, sans-serif;

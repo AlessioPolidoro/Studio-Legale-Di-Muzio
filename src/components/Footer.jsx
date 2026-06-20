@@ -21,6 +21,7 @@ export default function Footer() {
         </div>
 
         {/* Navigazione */}
+        <p className="font-sans text-xs tracking-[0.22em] uppercase text-brass mb-5">Navigazione</p>
         <ul className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-y-3 md:gap-x-8 mb-10" role="list">
           {navLinks.map(({ to, label }) => (
             <li key={to}>

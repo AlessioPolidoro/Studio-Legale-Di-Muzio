@@ -136,7 +136,7 @@ export default function Studio() {
               <div className="aspect-[4/3] overflow-hidden border border-stone/35">
                 <iframe
                   title="Studio Legale Avv. Maurizio Di Muzio - Chieti"
-                  src="https://maps.google.com/maps?q=Via+degli+Agostiniani+46,+66100+Chieti+CH,+Italia&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Via+degli+Agostiniani+46,+66100+Chieti+CH,+Italia&t=m&z=17&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -202,13 +202,13 @@ export default function Studio() {
       {/* ====================================================
           CTA
       ==================================================== */}
-      <section className="py-20 px-6 bg-surface">
-        <motion.div {...revealUp()} className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div>
-            <h3 className="font-display text-2xl text-ink mb-2">Hai una questione di diritto civile?</h3>
-            <p className="font-sans text-taupe">Scrivi o chiama per fissare una prima consulenza.</p>
+      <section className="py-20 px-6 bg-surface text-left md:text-center">
+        <motion.div {...revealUp()} className="max-w-2xl mx-auto">
+          <h3 className="font-display text-2xl text-ink mb-3">Hai una questione di diritto civile?</h3>
+          <p className="font-sans text-taupe mb-8">Scrivi o chiama per fissare una prima consulenza.</p>
+          <div className="flex justify-start md:justify-center">
+            <Button to="/contatti" variant="primary">Contattami</Button>
           </div>
-          <Button to="/contatti" variant="primary">Contattami</Button>
         </motion.div>
       </section>
     </>

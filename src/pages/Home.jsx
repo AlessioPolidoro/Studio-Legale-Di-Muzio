@@ -42,7 +42,7 @@ export default function Home() {
       <section className="min-h-[85vh] flex flex-col justify-center bg-bg px-6 py-24 relative overflow-hidden">
         {/* Monogramma decorativo di sfondo */}
         <span
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-auto md:top-auto md:right-0 md:bottom-0 md:translate-x-0 md:translate-y-8 font-display font-semibold leading-none text-stone/[0.07] select-none pointer-events-none"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-auto md:top-auto md:right-0 md:bottom-0 md:translate-x-0 md:translate-y-8 font-display font-semibold leading-none text-stone/[0.11] md:text-stone/[0.07] select-none pointer-events-none"
           style={{ fontSize: "clamp(10rem, 24vw, 22rem)" }}
           aria-hidden="true"
         >

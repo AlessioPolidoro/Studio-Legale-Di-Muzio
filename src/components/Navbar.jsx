@@ -128,7 +128,7 @@ export default function Navbar() {
             role="dialog"
             aria-label="Menu di navigazione"
           >
-            <div className="flex-1 flex flex-col px-6 pt-[88px] pb-10">
+            <div className="flex-1 flex flex-col px-6 pt-[88px] pb-8 overflow-hidden">
               {/* Accento brass */}
               <motion.div
                 variants={bottomVariants}

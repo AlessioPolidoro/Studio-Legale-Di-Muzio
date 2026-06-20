@@ -3,36 +3,47 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { to: "/studio",   label: "Lo Studio",           n: "01" },
-  { to: "/aree",     label: "Aree di competenza",   n: "02" },
-  { to: "/metodo",   label: "Metodo",               n: "03" },
-  { to: "/contatti", label: "Contatti",             n: "04" },
+  { to: "/studio",   label: "Lo Studio",          n: "01" },
+  { to: "/aree",     label: "Aree di competenza",  n: "02" },
+  { to: "/metodo",   label: "Metodo",              n: "03" },
+  { to: "/contatti", label: "Contatti",            n: "04" },
 ];
 
 const ease = [0.76, 0, 0.24, 1];
 
+/* Overlay: scivola da destra */
 const overlayVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.35, ease: "easeOut" } },
-  exit:   { opacity: 0, transition: { duration: 0.3,  ease: "easeIn", delay: 0.15 } },
+  hidden:  { x: "100%" },
+  visible: { x: 0,      transition: { duration: 0.65, ease } },
+  exit:    { x: "100%", transition: { duration: 0.5,  ease, delay: 0.15 } },
 };
 
+/* Lista: stagger dopo che l'overlay è arrivato */
 const listVariants = {
   hidden:  {},
-  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.3 } },
   exit:    { transition: { staggerChildren: 0.04, staggerDirection: -1 } },
 };
 
+/* Singola voce: sale dal basso */
 const itemVariants = {
-  hidden:  { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease } },
-  exit:    { opacity: 0, y: 20, transition: { duration: 0.25, ease } },
+  hidden:  { opacity: 0, y: 48 },
+  visible: { opacity: 1, y: 0,  transition: { duration: 0.6, ease } },
+  exit:    { opacity: 0, y: 24, transition: { duration: 0.22 } },
 };
 
+/* Linea brass: si disegna da sinistra */
+const lineVariants = {
+  hidden:  { scaleX: 0 },
+  visible: { scaleX: 1, transition: { duration: 0.55, ease, delay: 0.2 } },
+  exit:    { scaleX: 0, transition: { duration: 0.15 } },
+};
+
+/* Indirizzo: fade */
 const bottomVariants = {
   hidden:  { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.4, delay: 0.45 } },
-  exit:    { opacity: 0, transition: { duration: 0.2 } },
+  visible: { opacity: 1, transition: { duration: 0.4, delay: 0.7 } },
+  exit:    { opacity: 0, transition: { duration: 0.15 } },
 };
 
 export default function Navbar() {
@@ -68,8 +79,11 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          open ? "bg-transparent border-none" :
-          scrolled ? "bg-surface border-b border-stone/30" : "bg-bg/80 backdrop-blur-sm"
+          open
+            ? "bg-transparent border-none"
+            : scrolled
+            ? "bg-surface border-b border-stone/30"
+            : "bg-bg/80 backdrop-blur-sm"
         }`}
       >
         <nav
@@ -90,7 +104,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop navigation */}
+          {/* Desktop nav */}
           <ul className="hidden md:flex items-center gap-8" role="list">
             {navLinks.map(({ to, label }) => (
               <li key={to}>
@@ -99,7 +113,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Trigger testuale mobile */}
+          {/* Trigger mobile */}
           <button
             className="relative z-[60] md:hidden py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
             onClick={() => setOpen((v) => !v)}
@@ -114,7 +128,7 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Full-screen overlay */}
+      {/* Overlay full-screen */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -129,10 +143,11 @@ export default function Navbar() {
             aria-label="Menu di navigazione"
           >
             <div className="flex-1 flex flex-col px-6 pt-[88px] pb-8 overflow-hidden">
-              {/* Accento brass */}
+
+              {/* Linea brass che si disegna */}
               <motion.div
-                variants={bottomVariants}
-                className="w-8 h-px bg-brass mb-10"
+                variants={lineVariants}
+                className="w-8 h-px bg-brass mb-10 origin-left"
                 aria-hidden="true"
               />
 
@@ -142,7 +157,7 @@ export default function Navbar() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="flex-1 flex flex-col justify-center gap-1"
+                className="flex-1 flex flex-col justify-center gap-0"
                 role="list"
               >
                 {navLinks.map(({ to, label, n }) => (
@@ -156,11 +171,11 @@ export default function Navbar() {
                         }`
                       }
                     >
-                      <span className="font-sans text-[0.65rem] tracking-widest text-white/35 w-5 flex-shrink-0">
+                      <span className="font-sans text-[0.6rem] tracking-widest text-white/30 w-5 flex-shrink-0">
                         {n}
                       </span>
                       <span
-                        className="font-display leading-none transition-colors duration-200 group-hover:text-brass"
+                        className="font-display leading-[1.1] transition-colors duration-200 group-hover:text-brass"
                         style={{ fontSize: "clamp(1.6rem, 7.5vw, 3rem)" }}
                       >
                         {label}
@@ -170,9 +185,12 @@ export default function Navbar() {
                 ))}
               </motion.ul>
 
-              {/* Indirizzo in fondo */}
-              <motion.div variants={bottomVariants} className="border-t border-white/10 pt-6 text-center">
-                <p className="font-sans text-xs text-white/40 tracking-wide">
+              {/* Indirizzo */}
+              <motion.div
+                variants={bottomVariants}
+                className="border-t border-white/10 pt-6 text-center"
+              >
+                <p className="font-sans text-xs text-white/35 tracking-wide">
                   Via degli Agostiniani 46 &mdash; 66100 Chieti
                 </p>
               </motion.div>

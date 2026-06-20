@@ -39,8 +39,8 @@ export default function Footer() {
         <address className="not-italic font-sans text-sm text-white/35 leading-relaxed mb-14">
           Via degli Agostiniani 46, 66100 Chieti (CH)<br />
           Tel.{" "}
-          <a href="tel:+390000000000" className="hover:text-white/65 transition-colors">
-            [DA INSERIRE]
+          <a href="tel:+393283358818" className="hover:text-white/65 transition-colors">
+            328 335 8818
           </a>
           {" · "}
           <a href="mailto:studio@esempio.it" className="hover:text-white/65 transition-colors">

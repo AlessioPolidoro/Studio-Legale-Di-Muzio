@@ -71,8 +71,8 @@ export default function Contatti() {
                   Telefono
                 </p>
                 <p className="font-sans text-sm text-taupe">
-                  <a href="tel:+390000000000" className="hover:text-bordeaux transition-colors">
-                    [DA INSERIRE]
+                  <a href="tel:+393283358818" className="hover:text-bordeaux transition-colors">
+                    328 335 8818
                   </a>
                 </p>
               </div>

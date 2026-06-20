@@ -283,7 +283,7 @@ export default function Home() {
           <div className="w-8 h-px bg-brass/50 mx-auto my-8" aria-hidden="true" />
           <p className="font-sans text-white/70 leading-relaxed mb-10 text-lg">
             Ogni vicenda legale è diversa. Il primo passo è raccontarla.
-            È possibile scrivere o chiamare per fissare un appuntamento.
+            È possibile scrivere o chiamare per fissare<br className="md:hidden" /> un appuntamento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button to="/contatti" variant="solidLight">Contatta lo studio</Button>

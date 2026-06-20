@@ -154,26 +154,40 @@ export default function ContactForm() {
         </Field>
       </div>
 
-      <div className="mb-8">
-        <label className="flex items-start gap-3 cursor-pointer">
+      <div className="mb-8 border-t border-stone/20 pt-6">
+        <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
             name="privacy"
             checked={fields.privacy}
             onChange={handleChange}
-            className="mt-0.5 w-4 h-4 border-stone accent-bordeaux flex-shrink-0"
+            className="sr-only peer"
             aria-invalid={!!errors.privacy}
           />
-          <span className="font-sans text-sm text-taupe leading-relaxed">
+          <span className={`mt-0.5 flex-shrink-0 w-4 h-4 border transition-all duration-200 flex items-center justify-center peer-focus-visible:ring-2 peer-focus-visible:ring-bordeaux peer-focus-visible:ring-offset-1 ${
+            errors.privacy
+              ? "border-bordeaux/70"
+              : fields.privacy
+              ? "border-bordeaux bg-bordeaux"
+              : "border-stone/60 group-hover:border-bordeaux/50"
+          }`}>
+            {fields.privacy && (
+              <svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true">
+                <path d="M1 3.5L3.2 5.5L8 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </span>
+          <span className="font-sans text-xs text-taupe leading-relaxed">
             Ho letto e accetto l'
-            <Link to="/privacy" className="text-bordeaux hover:text-bordeauxDark underline underline-offset-2">
+            <Link to="/privacy" className="text-bordeaux hover:text-bordeauxDark underline underline-offset-2 transition-colors">
               informativa sul trattamento dei dati personali
             </Link>
-            .*
+            .{" "}
+            <span className="text-bordeaux">*</span>
           </span>
         </label>
         {errors.privacy && (
-          <p className="mt-1.5 ml-7 font-sans text-xs text-bordeaux" role="alert">
+          <p className="mt-2 ml-7 font-sans text-xs text-bordeaux" role="alert">
             {errors.privacy}
           </p>
         )}

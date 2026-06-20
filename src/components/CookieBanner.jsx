@@ -19,31 +19,35 @@ export default function CookieBanner() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ y: 80, opacity: 0 }}
+          initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+          exit={{ y: 24, opacity: 0 }}
+          transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
           role="dialog"
           aria-label="Avviso cookie"
           aria-live="polite"
-          className="fixed bottom-0 left-0 right-0 z-40 bg-surface border-t border-stone/50 shadow-lg"
+          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:w-80 z-40"
         >
-          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
-            <p className="font-sans text-sm text-taupe leading-relaxed">
-              Questo sito utilizza esclusivamente cookie tecnici necessari al funzionamento.{" "}
+          <div className="bg-surface border border-stone/40 shadow-2xl p-6">
+            {/* Accento brass */}
+            <div className="w-6 h-px bg-brass mb-5" aria-hidden="true" />
+
+            <p className="font-sans text-sm text-taupe leading-relaxed mb-5">
+              Utilizziamo solo cookie tecnici necessari al funzionamento del sito.{" "}
               <Link
                 to="/privacy"
-                className="text-bordeaux hover:text-bordeauxDark underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
+                className="text-bordeaux hover:text-bordeauxDark underline underline-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
               >
-                Informativa privacy e cookie
+                Informativa privacy
               </Link>
             </p>
+
             <button
               onClick={accept}
-              className="flex-shrink-0 font-sans text-sm font-medium bg-bordeaux text-white px-5 py-2.5 hover:bg-bordeauxDark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux focus-visible:ring-offset-2"
+              className="w-full font-sans text-xs tracking-[0.14em] uppercase font-medium bg-ink text-white px-6 py-3 hover:bg-bordeaux transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux focus-visible:ring-offset-2"
               aria-label="Accetta cookie tecnici e chiudi avviso"
             >
-              Accetto
+              Ho capito
             </button>
           </div>
         </motion.div>

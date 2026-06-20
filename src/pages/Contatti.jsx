@@ -17,7 +17,7 @@ export default function Contatti() {
   return (
     <>
       {/* Intestazione */}
-      <section className="min-h-screen flex flex-col justify-center px-6 py-32 bg-bg">
+      <section className="py-24 md:py-28 px-6 bg-bg">
         <div className="max-w-7xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}

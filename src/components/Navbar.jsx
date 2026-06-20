@@ -73,17 +73,13 @@ export default function Navbar() {
         }`}
       >
         <nav
-          className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[1fr_auto_1fr] md:flex items-center md:justify-between"
+          className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
           role="navigation"
           aria-label="Navigazione principale"
         >
-          {/* Colonna sinistra mobile (vuota) / su desktop non esiste */}
-          <div className="md:hidden" />
-
-          {/* Logo — centrato su mobile, a sinistra su desktop */}
           <Link
             to="/"
-            className="group relative z-[60] justify-self-center md:justify-self-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
+            className="group relative z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
             aria-label="Avv. Maurizio Di Muzio - Homepage"
           >
             <span className={`block font-display text-lg leading-none transition-colors duration-300 ${open ? "text-white group-hover:text-brass" : "text-ink group-hover:text-bordeaux"}`}>
@@ -94,29 +90,27 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Destra: nav desktop + trigger mobile */}
-          <div className="flex items-center justify-end gap-8">
-            <ul className="hidden md:flex items-center gap-8" role="list">
-              {navLinks.map(({ to, label }) => (
-                <li key={to}>
-                  <NavLink to={to} className={linkCls}>{label}</NavLink>
-                </li>
-              ))}
-            </ul>
+          {/* Desktop navigation */}
+          <ul className="hidden md:flex items-center gap-8" role="list">
+            {navLinks.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink to={to} className={linkCls}>{label}</NavLink>
+              </li>
+            ))}
+          </ul>
 
-            {/* Trigger testuale mobile */}
-            <button
-              className="relative z-[60] md:hidden py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
-              onClick={() => setOpen((v) => !v)}
-              aria-expanded={open}
-              aria-controls="mobile-menu"
-              aria-label={open ? "Chiudi menu" : "Apri menu"}
-            >
-              <span className={`font-sans text-xs tracking-[0.22em] uppercase transition-colors duration-300 ${open ? "text-white" : "text-ink"}`}>
-                {open ? "Chiudi" : "Menu"}
-              </span>
-            </button>
-          </div>
+          {/* Trigger testuale mobile */}
+          <button
+            className="relative z-[60] md:hidden py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordeaux"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Chiudi menu" : "Apri menu"}
+          >
+            <span className={`font-sans text-xs tracking-[0.22em] uppercase transition-colors duration-300 ${open ? "text-white" : "text-ink"}`}>
+              {open ? "Chiudi" : "Menu"}
+            </span>
+          </button>
         </nav>
       </header>
 

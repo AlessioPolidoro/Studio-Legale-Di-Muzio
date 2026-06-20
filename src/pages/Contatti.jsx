@@ -57,8 +57,13 @@ export default function Contatti() {
       <section className="py-24 px-6 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
 
-          {/* Info contatti laterali */}
-          <motion.aside {...revealUp()} aria-label="Informazioni di contatto">
+          {/* Form — primo su mobile, col-span-2 su desktop */}
+          <motion.div {...revealUp()} className="md:col-span-2 md:order-first">
+            <ContactForm />
+          </motion.div>
+
+          {/* Info contatti — dopo il form su mobile, colonna laterale su desktop */}
+          <motion.aside {...revealUp(0.1)} aria-label="Informazioni di contatto">
             <div className="space-y-8">
               <div>
                 <p className="font-sans text-xs font-medium tracking-[0.18em] uppercase text-brass mb-2">
@@ -117,11 +122,6 @@ export default function Contatti() {
               </div>
             </div>
           </motion.aside>
-
-          {/* Form */}
-          <motion.div {...revealUp(0.1)} className="md:col-span-2">
-            <ContactForm />
-          </motion.div>
         </div>
       </section>
     </>
